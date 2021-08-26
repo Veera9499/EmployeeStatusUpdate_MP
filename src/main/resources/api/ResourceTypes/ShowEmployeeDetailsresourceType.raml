@@ -1,0 +1,35 @@
+#%RAML 1.0 ResourceType
+get:
+  queryParameters:
+    id:
+      type: number
+      required: true
+  body:
+    application/json:
+      example:
+        {
+          "EmpName":"Veera Narendra",
+          "Status":"Active"
+        }
+  responses:
+    200:
+      body:
+        application/json:
+          example:
+            {
+              "Message":"Employee details displayed successfully"
+            }
+    400:
+      body:
+        application/json:
+          example:
+            {
+              "Message":"Client side errors"
+            }
+    500:
+      body:
+        application/json:
+          example:
+            {
+              "Message":"Server side errors"
+            }

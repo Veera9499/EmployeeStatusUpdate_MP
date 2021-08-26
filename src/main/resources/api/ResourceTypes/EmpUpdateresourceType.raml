@@ -1,0 +1,37 @@
+#%RAML 1.0 ResourceType
+put:
+  queryParameters:
+    id:
+      type: number
+      required: true
+  body:
+    application/json:
+      example:
+        {
+          "EmpID":"363",
+          "EmpName":"Veera Narendra",
+          "Status":"Active"
+        }
+  responses:
+    200:
+      body:
+        application/json:
+          example:
+            {
+              "message":"Employee name updated successfully"
+            }
+    400:
+      body:
+        application/json:
+          example:
+            {
+              "message":"Client error EmpId input is not given"
+            }
+    500:
+      body:
+        application/json:
+          example:
+            {
+              "message":"Server error DB is not available to update EmpRecords"
+            }
+    

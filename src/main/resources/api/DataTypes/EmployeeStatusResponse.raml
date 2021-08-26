@@ -1,0 +1,57 @@
+#%RAML 1.0 Library
+usage: Employee records types
+types:
+  CreateEmployeeExampleType:
+    type: object
+    properties:
+      EmpID:
+        description: Employee ID
+        type: integer
+        required: true
+        example: 363
+      EmpName:
+        description: Employee Name
+        type: string
+        required: false
+        example: "Veera Narendra"
+      Status:
+        description: Employee Status
+        type: string
+        required: false
+        example: "Active"
+  CreateEmployeeSuccessResponse:
+    type: object
+    properties:
+      StatusCode:
+        description: Suceess response status code
+        type: integer
+        example: 200
+      message:
+        description: Suceess response status code
+        type: string
+        example: "Employee created successfully"
+  CreateEmployeeClientErrorResponse:
+    type: object
+    properties:
+      StatusCode:
+        description: client error status code
+        type: integer
+        example: 400
+      message:
+        description: Client side error message
+        type: string
+        example: "Cleint Error"
+  CreateEmployeeServerErrorResponse:
+    type: object
+    properties:
+      StatusCode:
+        description: Server side error status code
+        type: integer
+        example: 500
+      message:
+        description: Server side error message
+        type: string
+        example: "Server Error"
+
+      
+

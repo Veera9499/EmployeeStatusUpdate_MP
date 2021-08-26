@@ -1,0 +1,39 @@
+#%RAML 1.0
+title: EmployeeStatusDetails
+
+resourceTypes:
+  UpdateEmployee: !include ResourceTypes/EmpUpdateresourceType.raml
+  DisplayEmpDetails: !include ResourceTypes/ShowEmployeeDetailsresourceType.raml
+uses:
+  ESP: DataTypes/EmployeeStatusResponse.raml
+/EmpStaus:
+  post:
+    body:
+      application/json:
+        type: ESP.CreateEmployeeExampleType
+        example: !include Examples/CreateEmployeeExample.json
+    responses:
+      200:
+        body:
+          application/json:
+            type: ESP.CreateEmployeeSuccessResponse
+            example: !include Examples/SuccessResponse.raml
+      400:
+        body:
+          application/json:
+            type: ESP.CreateEmployeeClientErrorResponse
+            example: !include Examples/ClientErrorResponse.raml
+      500:
+        body:
+          application/json:
+            type: ESP.CreateEmployeeServerErrorResponse
+            example: !include Examples/ServerErrorResponse.raml
+  /UpdateEmpDetails:
+     type: UpdateEmployee
+
+  /DisplayEmployeeDetails:
+    type:
+      DisplayEmpDetails
+
+      
+       
